@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Endereço start</th>
+                <th scope="col">Endereço final</th>
+                <th scope="col">Distância</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for trajeto in trajetos %}
+                <tr>
+                    <th scope="row">{{ trajeto.id }}</th>
+                    <td>{{ trajeto.endereco_comeco }}</td>
+                    <td>{{ trajeto.endereco_final }}</td>
+                    <td>{{ trajeto.distancia }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a class="btn btn-primary" href="{% url 'novo_endereco' %}">Cadastrar</a>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Rua</th>
+                <th scope="col">Bairro</th>
+                <th scope="col">Numero</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for endereco in enderecos %}
+                <tr>
+                    <th scope="row">{{ endereco.id }}</th>
+                    <td>{{ endereco.rua }}</td>
+                    <td>{{ endereco.bairro }}</td>
+                    <td>{{ endereco.numero }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a class="btn btn-primary" href="{% url 'novo_endereco' %}">Cadastrar</a>
+{% endblock %}

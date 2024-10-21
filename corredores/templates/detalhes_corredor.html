@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {{ object.nome }}
+    <a href="{% url 'corredores' pk=object.pk %}">Voltar</a>
+    <a href="{% url 'corredor_deletar' pk=object.pk %}">Deletar</a>
+{% endblock %}

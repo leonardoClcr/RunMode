@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Idade</th>
+                <th scope="col">Altura</th>
+                <th scope="col">Peso</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for corredor in corredores %}
+            <tr>
+              <th scope="row">{{ corredor.id }}</th>
+              <td>{{ corredor.nome }}</td>
+              <td>{{ corredor.idade }} anos</td>
+              <td>{{ corredor.altura }} metros</td>
+              <td>{{ corredor.peso }} KG</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+    </table>
+    <a href="{% url "novo_corredor" %}" class="btn btn-primary">Cadastrar</a>
+{% endblock %}
