@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+    <div class="card-header">
+      <h1 class="card-title">Deletar Trajeto</h1>
+    </div>
+    <div class="card-body">
+      <p>Tem certeza que deseja deletar este trajeto <strong>{{ object.nome }}</strong>?</p>
+      <form method="post">
+        {% csrf_token %}
+        <div class="buttons-container">
+          <button type="submit" class="btn btn-danger">Deletar trajeto</button>
+          <a href="{% url 'trajetos' %}" class="btn btn-secondary">Cancelar</a>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}
