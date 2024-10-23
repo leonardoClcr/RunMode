@@ -1,6 +1,58 @@
 from django.views.generic import ListView, CreateView, DeleteView, UpdateView
-from core.forms import EnderecoModelForm, TrajetoModelForm
-from core.models import Endereco, Trajeto
+from core.forms import EnderecoModelForm, TrajetoModelForm, TreinoModelForm, CorridaModelForm
+from core.models import Endereco, Trajeto, Treino, Corrida
+
+
+class CorridaListView(ListView):
+    model = Corrida
+    template_name = 'lista_corrida.html'
+    context_object_name = 'corridas'
+
+
+class CorridaCreateView(CreateView):
+    model = Corrida
+    form_class = CorridaModelForm
+    template_name = 'criar_corrida.html'
+    success_url = '/corridas/'
+
+
+class CorridaDeleteView(DeleteView):
+    model = Corrida
+    template_name = 'deletar_corrida.html'
+    success_url = '/corridas/'
+
+
+class CorridaUpdateView(UpdateView):
+    model = Corrida
+    form_class = CorridaModelForm
+    template_name = 'atualizar_corrida.html'
+    success_url = '/corridas/'
+
+
+class TreinoListView(ListView):
+    model = Treino
+    template_name = 'lista_treino.html'
+    context_object_name = 'treinos'
+
+
+class TreinoCreateView(CreateView):
+    model = Treino
+    form_class = TreinoModelForm
+    template_name = 'criar_treino.html'
+    success_url = '/treinos/'
+
+
+class TreinoDeleteView(DeleteView):
+    model = Treino
+    template_name = 'deletar_treino.html'
+    success_url = '/treinos/'
+
+
+class TreinoUpdateView(UpdateView):
+    model = Treino
+    form_class = TrajetoModelForm
+    template_name = 'atualizar_treino.html'
+    success_url = '/treinos/'
 
 
 class TrajetoListView(ListView):

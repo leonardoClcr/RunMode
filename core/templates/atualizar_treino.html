@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h1>Editar Treinos</h1>
+        <table>
+        {{ form.as_table }}
+        </table>
+        <div>
+        <div class="buttons-container">
+            <input type="submit" value="Salvar Alterações" class="btn btn-primary">
+            <a href="{% url 'deletar_treino' pk=object.pk %}" class="btn btn-danger">Deletar Treino</a>
+            <a href="{% url 'treinos' %}" class="btn btn-secondary">Cancelar</a>
+        </div>
+        </div>
+    </form>
+{% endblock %}

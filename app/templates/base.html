@@ -14,13 +14,16 @@
                     <a class="nav-link active" aria-current="page" href="{% url 'corredores' %}">Corredores</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">Treinos</a>
+                    <a class="nav-link active" href="{% url "treinos" %}">Treinos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">Corridas</a>
+                    <a class="nav-link active" href="{% url "corridas" %}">Corridas</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" href="{% url 'enderecos' %}">Endereços</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'trajetos' %}">Trajetos</a>
                 </li>
             </ul>
         </nav>

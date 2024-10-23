@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Distancia</th>
+                <th scope="col">Posição</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for corrida in corridas %}
+                <tr>
+                    <th scope="row">{{ corrida.id }}</th>
+                    <td>{{ corrida.nome }}</td>
+                    <td>{{ corrida.distancia_realizada }}</td>
+                    <td>{{ corrida.posicao }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a class="btn btn-primary" href="{% url 'criar_corrida' %}">Cadastrar</a>
+{% endblock %}

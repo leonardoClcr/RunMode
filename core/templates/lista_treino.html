@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Trajeto</th>
+                <th scope="col">Pace</th>
+                <th scope="col">Distância</th>
+                <th scope="col">Data</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for treino in treinos %}
+                <tr>
+                    <th scope="row">{{ treino.id }}</th>
+                    <td>{{ treino.trajeto }}</td>
+                    <td>{{ treino.pace_realizado }}</td>
+                    <td>{{ treino.distancia }}</td>
+                    <td>{{ treino.data }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a class="btn btn-primary" href="{% url 'criar_treino' %}">Cadastrar</a>
+{% endblock %}
